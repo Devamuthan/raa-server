@@ -22,8 +22,10 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "csv-parse": "^4.15.4",
     "express": "^4.17.1",
     "formidable": "^1.2.2",
-    "log4js": "^6.3.0"
+    "log4js": "^6.3.0",
+    "sync-sql": "^1.0.2"
   }
 }

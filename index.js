@@ -3,6 +3,7 @@ const log4js = require( 'log4js' )
 const bodyParser = require( 'body-parser' )
 const formidable = require( 'formidable' )
 const Tabula = require( './util/tabula-js/tabula' );
+const DatabaseSetupController = require('./controller/DatabaseSetupController')
 
 const app = express()
 const logger = log4js.getLogger()
@@ -33,6 +34,8 @@ app.post( '/', async ( req, res ) => {
         res.end()
     } )
 } )
+
+app.use('/database-setup', DatabaseSetupController)
 
 
 app.use( ( req, res ) => {

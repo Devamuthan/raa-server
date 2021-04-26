@@ -1,0 +1,94 @@
+Subject,SubjectCode,SubjectType,Credits
+Communicative English,HS8151,T,4
+Engineering Mathematics I,MA8151,T,4
+Engineering Physics,PH8151,T,3
+Engineering Chemistry,CY8151,T,3
+Problem Solving and Python Programming,GE8151,T,3
+Engineering Graphics,GE8152,T,4
+Problem Solving and Python Programming Laboratory,GE8161,P,2
+Physics and Chemistry Laboratory,BS8161,P,2
+b,,,
+Technical English,HS8251,T,4
+Engineering Mathematics II,MA8251,T,3
+Physics for Electronics Engineering,PH8253,T,3
+Basic Civil and Mechanical Engineering,BE8252,T,4
+Circuit Theory,EE8251,T,3
+Environmental Science and Engineering,GE8291,T,3
+Engineering Practices Laboratory,GE5261,P,2
+Electric Circuits Laboratory,BE8261,P,2
+b,,,
+Transforms and Partial Differential Equations,MA8353,T,4
+Electron Devices and Circuits,EC8353,T,3
+Digital Logic Circuits,EE8351,T,3
+Electrical Measurements,EI8351,T,3
+Transducers Engineering,EI8352,T,3
+Object Oriented Programming,CS8392,T,3
+Measurements and Transducers Laboratory,EI8361,P,2
+Object Oriented Programming Laboratory,CS8383,P,2
+MEMS and Nano Science,EE8072,P,3
+Power Electronics and Drives,EI8077,P,3
+System Identification,IC8072,P,3
+Computer Networks,EI8074,P,3
+Intellectual Property Rights,GE8075,P,3
+b,,,
+Numerical Methods,MA8491,T,4
+Electrical Machines,EI8451,T,3
+Industrial Instrumentation - I,EI8452,T,3
+Linear Integrated Circuits and Applications,EE8451,T,3
+Control Systems,IC8451,T,4
+Communication Engineering,EC8395,T,3
+Devices and Machines Laboratory,EI8461,P,2
+Linear and Digital Integrated Circuits Laboratory,EE8461,P,2
+b,,,
+Analytical Instruments,EI8551,T,3
+Industrial Instrumentation - II,EI8552,T,3
+Process Control,EI8553,T,3
+Microprocessors and Microcontrollers,EE8551,T,3
+Digital Signal Processing,EE8591,T,3
+Industrial Instrumentation Laboratory,EI8561,P,2
+Microprocessors and Microcontrollers Laboratory,EE8681,P,2
+b,,,
+Logic and Distributed Control System,EI8651,T,3
+Computer Control of Processes,EI8691,T,3
+Data Structures,CS8391,T,3
+Electronic Instrumentation,EI8692,T,3
+Data Structures Laboratory,CS8381,P,2
+Process Control Laboratory,EI8661,P,2
+Professional Communication,HS8581,T,1
+MEMS and Nano Science,EE8072,T,3
+Power Electronics and Drives,EI8077,T,3
+System Identification,IC8072,T,3
+Computer Networks,EI8074,T,3
+Intellectual Property Rights,GE8075,T,3
+Adaptive Control,EI8071,T,3
+Advanced Instrumentation Systems,EI8072,T,3
+Applied Soft Computing,EE8071,T,3
+b,,,
+Industrial Data Networks,EI8751,T,3
+Embedded Systems,EE8691,T,3
+Digital Image Processing,EC8093,T,3
+Industrial Automation Laboratory,EI8761,P,2
+Instrumentation System Design Laboratory,EI8762,P,2
+Fibre Optics and Laser Instrumentation,EI8075,T,3
+Electromagnetic Theory,EE8391,T,3
+Disaster Management,GE8071,T,3
+Human Rights,GE8074,T,3
+Operations Research,MG8491,T,3
+Foundation Skills in Integrated Product Development,GE8072,T,3
+Thermal Power Plant Instrumentation,EI8092,T,3
+Advanced Digital Signal Processing,EC8091,T,3
+Optimal Control,EI8076,T,3
+Radar and Navigational Aids,TL8071,T,3
+Total Quality Management,GE8077,T,3
+VLSI Design,EC8095,T,3
+b,,,
+Project Work,EI8811,P,10
+Biomedical Instrumentation,EI8073,T,3
+Instrumentation in Petrochemical Industries,EI8091,T,3
+Professional Ethics in Engineering,GE8076,T,3
+Principles of Management,MG8591,T,3
+Project Management and Finance,EI8078,T,3
+Advanced Process Control,IC8071,T,3
+Unit Operation and Control,EI8093,T,3
+Robotics and Automation,EI8079,T,3
+Fundamentals of Nano Science,GE8073,T,3

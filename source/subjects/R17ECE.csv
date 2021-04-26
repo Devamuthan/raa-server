@@ -1,0 +1,97 @@
+Subject,SubjectCode,SubjectType,Credits
+Communicative English,HS8151,T,4
+Engineering Mathematics I,MA8151,T,4
+Engineering Physics,PH8151,T,3
+Engineering Chemistry,CY8151,T,3
+Problem Solving and Python Programming,GE8151,T,3
+Engineering Graphics,GE8152,T,4
+Problem Solving and Python Programming Laboratory,GE8161,P,2
+Physics and Chemistry Laboratory,BS8161,P,2
+b,,,
+Technical English,HS8251,T,4
+Engineering Mathematics - II,MA8251,T,4
+Physics for Electronics Engineering,PH8253,T,3
+Basic Electrical and Instrumentation Engineering,BE8254,T,3
+Circuit Analysis,EC8251,T,4
+Electronic Devices,EC8252,T,3
+Circuits and Devices Laboratory,EC8261,P,2
+Engineering Practices Laboratory,GE8261,P,2
+b,,,
+Linear Algebra and Partial Differential Equations,MA8352,T,4
+Fundamentals of Data Structures In C,EC8393,T,3
+Electronic Circuits- I,EC8351,T,3
+Signals and Systems,EC8352,T,4
+Digital Electronics,EC8392,T,3
+Control Systems Engineering,EC8391,T,3
+Fundamentals of Data Structures in C Laboratory,EC8381,P,2
+Analog and Digital Circuits Laboratory,EC8361,P,2
+Interpersonal Skills/Listening & Speaking,HS8381,P,1
+b,,,
+Probability and Random Processes,MA8451,T,4
+Electronic Circuits II,EC8452,T,3
+Communication Theory,EC8491,T,3
+Electromagnetic Fields,EC8451,T,4
+Linear Integrated Circuits,EC8453,T,3
+Environmental Science and Engineering,GE8291,T,3
+Circuits Design and Simulation Laboratory,EC8461,P,2
+Linear Integrated Circuits Laboratory,EC8462,P,2
+b,,,
+Digital Communication,EC8501,T,3
+Discrete-Time Signal Processing,EC8553,T,4
+Computer Architecture and Organization,EC8552,T,3
+Communication Networks,EC8551,T,3
+Object Oriented Programming,CS8392,T,3
+Medical Electronics,EC8073,T,3
+Operating Systems,CS8493,T,3
+Robotics and Automation,EC8074,T,3
+Nano Technology and Applications,EC8075,T,3
+Human Rights,GE8074,T,3
+Total Quality Management,GE8077,T,3
+Digital Signal Processing Laboratory,EC8562,P,2
+Communication Systems Laboratory,EC8561,P,2
+Communication Networks Laboratory,EC8563,P,2
+b,,,
+Microprocessors and Microcontrollers,EC8691,T,3
+VLSI Design,EC8095,T,3
+Wireless Communication,EC8652,T,3
+Principles of Management,MG8591,T,3
+Transmission Lines and RF Systems,EC8651,T,3
+Cryptography and Network Security,CS8792,T,3
+Advanced Digital Signal Processing,EC8091,T,3
+MEMS and NEMS,EC8001,T,3
+Multimedia Compression and Communication,EC8002,T,3
+CMOS Analog IC Design,EC8003,T,3
+Wireless Networks,EC8004,T,3
+Intellectual Property Rights,GE8075,T,3
+Microprocessors and Microcontrollers Laboratory,EC8681,P,2
+VLSI Design Laboratory,EC8661,P,2
+Technical Seminar,EC8611,P,1
+Professional Communication,HS8581,P,1
+b,,,
+Antennas and Microwave Engineering,EC8701,T,3
+Optical Communication,EC8751,T,3
+Embedded and Real Time Systems,EC8791,T,3
+Ad hoc and Wireless Sensor Networks,EC8702,T,3
+Advanced Wireless Communication,EC8092,T,3
+Embedded Laboratory,EC8711,P,2
+Advanced Communication Laboratory,EC8761,P,2
+Cognitive Radio,EC8071,T,3
+Foundation Skills in Integrated Product Development,GE8072,T,3
+Machine Learning Techniques,CS8082,T,3
+Electronics Packaging and Testing,EC8005,T,3
+Mixed Signal IC Design,EC8006,T,3
+Disaster Management,GE8071,T,3
+b,,,
+Electro Magnetic Interference and Compatibility,EC8072,T,3
+Low power SoC Design,EC8007,T,3
+Photonic Networks,EC8008,T,3
+Compressive Sensing,EC8009,T,3
+Digital Image Processing,EC8093,T,3
+Professional Ethics in Engineering,GE8076,T,3
+Video Analytics,EC8010,T,3
+DSP Architecture and Programming,EC8011,T,3
+Satellite Communication,EC8094,T,3
+Soft Computing,CS8086,T,3
+Principles of Speech Processing,IT8006,T,3
+Fundamentals of Nano Science,GE8073,T,3
+Project Work,EC8811,P,10

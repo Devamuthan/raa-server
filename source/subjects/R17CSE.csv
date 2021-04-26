@@ -1,0 +1,101 @@
+Subject,SubjectCode,SubjectType,Credits
+Communicative English,HS8151,T,4
+Engineering Mathematics I,MA8151,T,3
+Engineering Physics,PH8151,T,3
+Engineering Chemistry,CY8151,T,3
+Problem Solving and Python Programming,GE8151,T,3
+Engineering Graphics,GE8152,T,3
+Problem Solving and Python Programming Laboratory,GE8161,P,2
+Physics and Chemistry Laboratory,BS8161,P,2
+b,,,
+Technical English,HS8251,T,4
+Engineering Mathematics II,MA8251,T,4
+Physics for Information Science,PH8252,T,3
+Basic Electrical Electronics and Measurement Engineering,BE8255,T,3
+Environmental Science and Engineering,GE8291,T,3
+Programming in C,CS8251,T,3
+Engineering Practices Laboratory,GE8261,P,2
+C Programming Laboratory,CS8261,P,2
+b,,,
+Discrete Mathematics,MA8351,T,4
+Digital Principles and System Design,CS8351,T,4
+Data Structures,CS8391,T,3
+Object Oriented Programming,CS8392,T,3
+Communication Engineering,EC8395,T,3
+Data Structures Laboratory,CS8381,P,2
+Object Oriented Programming Laboratory,CS8383,P,2
+Digital Systems Laboratory,CS8382,P,2
+Interpersonal Skills/Listening & Speaking,HS8381,P,1
+b,,,
+Probability and Queueing Theory,MA8402,T,4
+Computer Architecture,CS8491,T,3
+Database Management Systems,CS8492,T,3
+Design and Analysis of Algorithms,CS8451,T,3
+Operating Systems,CS8493,T,3
+Software Engineering,CS8494,T,3
+Database Management Systems Laboratory,CS8481,P,2
+Operating Systems Laboratory,CS8461,P,2
+Advanced Reading and Writing,HS8461,P,1
+b,,,
+Algebra and Number Theory,MA8551,T,4
+Computer Networks,CS8591,T,3
+Microprocessors and Microcontrollers,EC8691,T,3
+Theory of Computation,CS8501,T,3
+Object Oriented Analysis and Design,CS8592,T,3
+Microprocessors and Microcontrollers Laboratory,EC8681,P,2
+Object Oriented Analysis and Design Laboratory,CS8582,P,2
+Networks Laboratory,CS8581,P,2
+b,,,
+Internet Programming,CS8651,T,3
+Artificial Intelligence,CS8691,T,3
+Mobile Computing,CS8601,T,3
+Compiler Design,CS8602,T,4
+Distributed Systems,CS8603,T,3
+Data Warehousing and Data Mining,CS8075,T,3
+Software Testing,IT8076,T,3
+Embedded Systems,IT8072,T,3
+Agile Methodologies,CS8072,T,3
+Graph Theory and Applications,CS8077,T,3
+Digital Signal Processing,IT8071,T,3
+Intellectual Property Rights,GE8075,T,3
+Internet Programming Laboratory,CS8661,P,2
+Mobile Application Development Laboratory,CS8662,P,2
+Mini Project,CS8611,T,1
+Professional Communication,HS8581,P,1
+b,,,
+Principles of Management,MG8591,T,3
+Cryptography and Network Security,CS8792,T,3
+Cloud Computing,CS8791,T,3
+Big Data Analytics,CS8091,T,3
+Machine Learning Techniques,CS8082,T,3
+Computer Graphics and Multimedia,CS8092,T,3
+Software Project Management,IT8075,T,3
+Internet of Things,CS8081,T,3
+Service Oriented Architecture,IT8074,T,3
+Total Quality Mangement,GE8077,T,3
+Multicore Architectures and Programming,CS8083,T,3
+Human Computer Interaction,CS8079,T,3
+C# and .NetProgramming,CS8073,T,3
+Wireless Adhoc and Sensor Networks,CS8088,T,3
+Advanced Topics on Databases,CS8071,T,3
+Foundation Skills in Integrated Product Development,GE8072,T,3
+Human Rights,GE8074,T,3
+Disaster Management,GE8071,T,3
+Cloud Computing Laboratory,CS8711,P,2
+Security Laboratory,IT8761,P,2
+b,,,
+Digital Image Processing,EC8093,T,3
+Social Network Analysis,CS8085,T,3
+Information Security,IT8073,T,3
+Software Defined Networks,CS8087,T,3
+Cyber Forensics,CS8074,T,3
+Soft Computing,CS8086,T,3
+Professional Ethics in Engineering,GE8076,T,3
+Information Retrieval Techniques,CS8080,T,3
+Green Computing,CS8078,T,3
+GPU Architecture and Programming,CS8076,T,3
+Natural Language Processing,CS8084,T,3
+Parallel Algorithms,CS8001,T,3
+Speech Processing,IT8077,T,3
+Fundamentals of Nano Science,GE8073,T,3
+Project Work,CS8811,P,10

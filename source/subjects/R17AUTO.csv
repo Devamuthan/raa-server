@@ -1,0 +1,90 @@
+Subject,SubjectCode,SubjectType,Credits
+Communication Engineering,HS8151,T,4
+Engineering Mathematics I,MA8151,T,4
+Engineering Physics,PH8151,T,3
+Engineering Chemistry,CY8151,T,3
+Problem Solving and Python Programming,GE8151,T,3
+Engineering Graphics,GE8152,T,2
+Problem Solving and Python Programming Laboratory,GE8161,P,2
+Physics and Chemistry Laboratory,BS8161,P,2
+b,,,
+Technical English,HS8251,T,4
+Engineering Mathematics II,MA8251,T,4
+Material Science,PH8251,T,3
+Basic Electrical Electronics and Instrumentation Engineering,BE8253,T,3
+Environmental Science and Engineering,GE8291,T,3
+Engineering Mechanics,GE8292,T,4
+Engineering Practices Laboratory,GE5261,P,2
+Basic Electrical Electronics and Instrumentation Engineering Laboratory,BE8261,P,2
+b,,,
+Transforms and Partial Differential Equations,MA8353,T,4
+Engineering Thermodynamics,ME8391,T,4
+Strength of Materials for Mechanical Engineers,CE8395,T,3
+Spark Ignition Engines,AT8301,T,3
+Manufacturing Technology,ME8392,T,3
+Fluid Mechanics and Machinery,CE8394,T,4
+Strength of Materials and Fluid Mechanics and Machinery Laboratory,CE8381,P,2
+Computer Aided Machine Drawing,ME8381,T,2
+Interpersonal Skills/Listening & Speaking,HS8381,T,1
+b,,,
+Statistics adn Numerical Methods,MA8452,T,4
+Compression Ignition Engines,AT8401,T,3
+Engineering Metallurgy,ME8491,T,3
+Electronics and Microprocessors,EC8396,T,3
+Automotive Chassis,AT8402,T,3
+Mechanics of Machines,PR8451,T,3
+Automotive Components Laboratory,AT8411,P,2
+Electronics and Micropracessors Laboratory,EC8382,P,2
+b,,,
+Design of Machine Elements,ME8593,T,3
+Automotive Transmission,AT8501,T,3
+Automotive Electrical and Electronics Systems,AT8502,T,3
+Vehicle Design Data Characteristics,AT8503,T,3
+Automotive Fuels and Lubricants,AT8504,T,3
+Automotive Electrical and Electronics Laboratory,AT8511,P,2
+Automotive Fuels and Lubricants Laboratory,AT8512,P,2
+Professional Communication,HS8581,T,1
+b,,,
+Total Quality Management,GE8077,T,3
+Automotive Engine Components Design,AT8601,T,3
+Automotive Chassis Components Design,AT8602,T,3
+Two and Three Wheelers,AT8603,T,3
+Vehicle Dynamics,AT8604,T,3
+Computer Aided Engine and Chasis Design Laboratory,AT8611,P,2
+Two and Three Wheelers Laboratory,AT8612,P,2
+Automotive Air-Conditioning,AT8001,T,3
+Advance Theory of IC Engines,AT8002,T,3
+Metrology and Measurements for Automobile Engineers,AT8003,T,3
+New Product Development,PR8072,T,3
+Intellectual Property Rights,GE8075,T,3
+Fundamentals of nano Science,GE8073,T,3
+b,,,
+Engine and Vehicle Management System,AT8701,T,3
+Finite Element Analysis,ME8692,T,3
+Vehicle Maintanace,AT8702,T,3
+Engine perfomance and Emission Testing Laboratory,AT8711,P,2
+Vehicle Maintanace Laboratory,AT8712,P,2
+Manufacturing of Automotive Components,AT8091,T,3
+New Generation and Hybrid Vehicle,AT8004,T,3
+Automotive Aerodynamics,AT8005,T,3
+Off Road Vehicle,AT8006,T,3
+Operations Research,MG8493,T,3
+Disaster Management,GE8071,T,3
+Noise Vibration and Measurements,AT8007,T,3
+Lean Six Sigma,PR8071,T,3
+Robotics,ME8099,T,3
+Composite Materials and Mechanics,ME8092,T,3
+Foundation Skills in Integrated Product Development,GE8072,T,3
+Human Rights,GE8074,T,3
+b,,,
+Vehicle body Engineering,AT8801,T,3
+Project Work,AT8811,T,10
+Computer Integrated Manufacturing,PR8491,T,3
+Alternative Fuels and Energy Systems,AT8012,T,3
+Principles of Management,MG8591,T,3
+Professional Ethics in Engineering,GE8076,T,3
+Transport Managemnet,AT8008,T,3
+Entrepreneurship Development,MG8091,T,3
+Automotive Safety,AT8009,T,3
+Automotive Pollution and Control,AT8010,T,3
+Automotive Testing,AT8011,T,3
