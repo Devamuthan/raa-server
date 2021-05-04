@@ -1,9 +1,12 @@
-const config ={
+const bluebird = require('bluebird')
+
+const connectionConfig = {
     host: 'localhost',
     user: 'root',
     password: 'password',
+    port: 3306,
     database: 'raa',
-    port: 3306
+    Promise: bluebird
 }
 
-module.exports = config
+module.exports = connectionConfig

@@ -42,6 +42,7 @@ Computer Networks,CS8591,T,3
 Microprocessors and Microcontrollers,EC8691,T,3
 Theory of Computation,CS8501,T,3
 Object Oriented Analysis and Design,CS8592,T,3
+Geographic Information System,OCE552,T,3
 Microprocessors and Microcontrollers Laboratory,EC8681,P,2
 Object Oriented Analysis and Design Laboratory,CS8582,P,2
 Networks Laboratory,CS8581,P,2
@@ -60,7 +61,7 @@ Digital Signal Processing,IT8071,T,3
 Intellectual Property Rights,GE8075,T,3
 Internet Programming Laboratory,CS8661,P,2
 Mobile Application Development Laboratory,CS8662,P,2
-Mini Project,CS8611,T,1
+Mini Project,CS8611,P,1
 Professional Communication,HS8581,P,1
 b,,,
 Principles of Management,MG8591,T,3
@@ -81,6 +82,7 @@ Advanced Topics on Databases,CS8071,T,3
 Foundation Skills in Integrated Product Development,GE8072,T,3
 Human Rights,GE8074,T,3
 Disaster Management,GE8071,T,3
+Hospital Management, OBM752,T,3
 Cloud Computing Laboratory,CS8711,P,2
 Security Laboratory,IT8761,P,2
 b,,,
