@@ -7,7 +7,6 @@ class MarksDTO {
         this._marksData = marksData;
     }
 
-
     get success () {
         return this._success;
     }

@@ -10,7 +10,6 @@ const cors = require('cors')
 const logger = log4js.getLogger()
 logger.level = 'info'
 
-let studentDTO = new StudentDTO(true,null,'',null)
 const studentService = new StudentService()
 
 router.use( bodyParser.json() )
@@ -23,6 +22,7 @@ router.post( '/', ( req, res ) => addStudents(req, res) )
 
 const addStudents = async (req, res) => {
     logger.info('Entering | StudentController::addStudents')
+    let studentDTO = new StudentDTO(true,null,'',null)
     let form = new formidable.IncomingForm()
     await form.parse( req, async function ( err, fields, files ) {
         if ( err ) {

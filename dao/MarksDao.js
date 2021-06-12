@@ -1,19 +1,21 @@
 const config = require( '../util/MysqlUtil' )
-const mysql = require('mysql2/promise')
+const mysql = require( 'mysql2/promise' )
 const log4js = require( 'log4js' )
 
 const logger = log4js.getLogger()
 logger.level = 'info'
 
 const DATA_ADDED_SUCCESSFULLY = "Data Added Successfully";
-
 const DATA_RETRIEVED_SUCCESSFULLY = "Data Retrieved Successfully";
+const DATA_NOT_FOUND = "Data Not Found";
 
-class MarksDao  {
+const NO_DATA_FOUND = 'No Data Found';
+
+class MarksDao {
 
     async addMarks ( marksDTO ) {
         logger.info( 'Entering | MarksDao::addMarks' )
-        this.conn = await mysql.createConnection(config)
+        this.conn = await mysql.createConnection( config )
         const data = marksDTO.marksData.data
         const type = marksDTO.marksData.type
         const grades = {
@@ -100,7 +102,7 @@ class MarksDao  {
                     }
                 }
             } catch ( err ) {
-                console.log( err )
+                // console.log( err )
                 marksDTO.success = false
                 marksDTO.description = err
                 marksDTO.status = 500
@@ -119,7 +121,7 @@ class MarksDao  {
 
     async getIndividualMarks ( RegNum, marksDTO ) {
         logger.info( 'Entering | MarksDao::getIndividualMarks' )
-        this.conn = await mysql.createConnection(config)
+        this.conn = await mysql.createConnection( config )
         try {
             const data = []
             let name, studClass, batch
@@ -192,12 +194,12 @@ class MarksDao  {
                 data: data
             }
         } catch ( err ) {
-            console.log( err )
+            // console.log( err )
             marksDTO.success = false
             marksDTO.description = err
             marksDTO.status = 500
             marksDTO.marksData = null
-            logger.info( 'Exiting | MarksDao::addMarks | Error' )
+            logger.info( 'Exiting | MarksDao::getIndividualMarks | Error' )
             return marksDTO
         }
 
@@ -208,14 +210,223 @@ class MarksDao  {
         return marksDTO
     }
 
+    async getClassMarks ( Batch, Department, Section, Semester, marksDTO ) {
+        logger.info( "Entering | MarksDao::getClassMarks" )
+        this.conn = await mysql.createConnection( config )
+        try {
+            let marks = {}, marks1 = {}, marks2 = {}, marks3 = {}, subjectAvg = {}, subjectAvg1 = {}, subjectAvg2 = {},
+                subjectAvg3 = {}, subjects = [], totalCredits, total, passPercent, passPercent1 = 0, passPercent2,
+                passPercent3, passPercent4
+            const tableName = Department + '_' + Batch + '_s' + Semester
+            const [ rows ] = await this.conn.execute( 'SELECT * FROM ' + tableName + ' T, students S WHERE T.REGISTRATION_NUMBER=S.REGISTRATION_NUMBER AND CLASS="' + Department + '_' + Section + '";' )
+            if ( rows.length > 0 ) {
+                Object.keys( rows[ 0 ] ).filter( item => {
+                    if ( item !== 'Registration_Number' && item !== 'Credit' && item !== 'Student_Name' && item !== 'Class' && item !== 'Batch' ) {
+                        subjects.push( item )
+                    }
+                } )
+                subjects.forEach( subject => {
+                    subjectAvg[ subject ] = 0
+                } )
+                totalCredits = (await this.findCredits( subjects, Department )).totalCredits
+                rows.forEach( item => {
+                    const regNo = item[ 'Registration_Number' ]
+                    let pass = 1
+                    item[ 'GPA' ] = this.format( item.Credit / totalCredits )
+                    delete item[ 'Class' ]
+                    delete item[ 'Batch' ]
+                    delete item[ 'Registration_Number' ]
+                    marks[ regNo ] = {
+                        ...item
+                    }
+                    subjects.forEach( subject => {
+                        if ( item[ subject ] !== 'U' ) {
+                            subjectAvg[ subject ] += 1
+                        }else{
+                            pass = 0
+                        }
+                    } )
+                    passPercent1 += pass
+                } )
+                // console.log( passPercent1 )
+            } else {
+                marksDTO.success = false
+                marksDTO.description = NO_DATA_FOUND
+                marksDTO.status = 200
+                marksDTO.marksData = null
+            }
+            if ( marksDTO.success ) {
+                let [ rows1 ] = await this.conn.execute( 'SELECT COUNT(*) AS TOTAL FROM ' + tableName + ' AS A, STUDENTS AS B WHERE A.REGISTRATION_NUMBER=B.REGISTRATION_NUMBER AND CLASS="' + Department + '_' + Section + '" AND BATCH="' + Batch + '";' )
+                total = parseInt( rows1[ 0 ][ 'TOTAL' ] )
+                let [ rows2 ] = await this.conn.execute( 'SELECT COUNT(*) AS FAILURES FROM ' + tableName + '_failures AS A, STUDENTS AS B WHERE A.REGISTRATION_NUMBER=B.REGISTRATION_NUMBER AND CLASS="' + Department + '_' + Section + '" AND BATCH="' + Batch + '";' )
+                const failures = parseInt( rows2[ 0 ][ 'FAILURES' ] )
+                passPercent = (((total - failures) / total) * 100).toString()
+            }
+            if ( marksDTO.success ) {
+                subjectAvg1 = { ...subjectAvg }
+                passPercent2 = passPercent1
+                const [ rows ] = await this.conn.execute( 'SELECT * FROM ' + tableName + '_arrear1' + ' T, students S WHERE T.REGISTRATION_NUMBER=S.REGISTRATION_NUMBER AND CLASS="' + Department + '_' + Section + '";' )
+                if ( rows.length > 0 ) {
+                    rows.forEach( item => {
+                        const regNo = item[ 'Registration_Number' ]
+                        marks[ regNo ].Credit += item.Credit
+                        item[ 'GPA' ] = this.format( marks[ regNo ].Credit / totalCredits )
+                        delete item[ 'Class' ]
+                        delete item[ 'Batch' ]
+                        delete item[ 'Registration_Number' ]
+                        delete item[ 'Credit' ]
+                        delete item[ 'Student_Name' ]
+                        if ( marks1[ regNo ] == null ) {
+                            marks1[ regNo ] = []
+                        }
+                        marks1[ regNo ].push( item )
+                        if ( item[ 'Grade' ] != 'U' ) {
+                            subjectAvg1[ item[ 'Subject_Code' ] ] += 1
+                        }
+                    } )
+                    Object.keys( marks1 ).forEach( regNo => {
+                        let pass = 1
+                        marks1[ regNo ].forEach( sub => {
+                            if ( sub.Grade === 'U' ) {
+                                pass = 0
+                            }
+                        } )
+                        passPercent2 += pass
+                    } )
+                }
+                // console.log( passPercent2 )
+            } else {
+                marksDTO.success = false
+            }
+            if ( marksDTO.success ) {
+                subjectAvg2 = { ...subjectAvg1 }
+                passPercent3 = passPercent2
+                const [ rows ] = await this.conn.execute( 'SELECT * FROM ' + tableName + '_arrear2' + ' T, students S WHERE T.REGISTRATION_NUMBER=S.REGISTRATION_NUMBER AND CLASS="' + Department + '_' + Section + '";' )
+                if ( rows.length > 0 ) {
+                    rows.forEach( item => {
+                        const regNo = item[ 'Registration_Number' ]
+                        marks[ regNo ].Credit += item.Credit
+                        item[ 'GPA' ] = this.format( marks[ regNo ].Credit / totalCredits )
+                        delete item[ 'Class' ]
+                        delete item[ 'Batch' ]
+                        delete item[ 'Registration_Number' ]
+                        delete item[ 'Credit' ]
+                        delete item[ 'Student_Name' ]
+                        if ( marks2[ regNo ] == null ) {
+                            marks2[ regNo ] = []
+                        }
+                        marks2[ regNo ].push( item )
+                        if ( item[ 'Grade' ] != 'U' ) {
+                            subjectAvg2[ item[ 'Subject_Code' ] ] += 1
+                        }
+                    } )
+                    Object.keys( marks2 ).forEach( regNo => {
+                        let pass = 1
+                        marks2[ regNo ].forEach( sub => {
+                            if ( sub.Grade === 'U' ) {
+                                pass = 0
+                            }
+                        } )
+                        passPercent3 += pass
+                    } )
+                }
+                // console.log( passPercent3 )
+            } else {
+                marksDTO.success = false
+            }
+            if ( marksDTO.success ) {
+                subjectAvg3 = { ...subjectAvg2 }
+                passPercent4 = passPercent3
+                const [ rows ] = await this.conn.execute( 'SELECT * FROM ' + tableName + '_arrear3' + ' T, students S WHERE T.REGISTRATION_NUMBER=S.REGISTRATION_NUMBER AND CLASS="' + Department + '_' + Section + '";' )
+                if ( rows.length > 0 ) {
+                    rows.forEach( item => {
+                        const regNo = item[ 'Registration_Number' ]
+                        marks[ regNo ].Credit += item.Credit
+                        item[ 'GPA' ] = this.format( marks[ regNo ].Credit / totalCredits )
+                        delete item[ 'Class' ]
+                        delete item[ 'Batch' ]
+                        delete item[ 'Registration_Number' ]
+                        delete item[ 'Credit' ]
+                        delete item[ 'Student_Name' ]
+                        if ( marks3[ regNo ] == null ) {
+                            marks3[ regNo ] = []
+                        }
+                        marks3[ regNo ].push( item )
+                        if ( item[ 'Grade' ] != 'U' ) {
+                            subjectAvg3[ item[ 'Subject_Code' ] ] += 1
+                        }
+                    } )
+                    Object.keys( marks3 ).forEach( regNo => {
+                        let pass = 1
+                        marks3[ regNo ].forEach( sub => {
+                            if ( sub.Grade === 'U' ) {
+                                pass = 0
+                            }
+                        } )
+                        passPercent4 += pass
+                    } )
+                }
+                // console.log( passPercent4 )
+            }
+            subjects.forEach( subject => {
+                subjectAvg[ subject ] = (((total - (total - subjectAvg[ subject ])) / total) * 100).toString()
+                subjectAvg1[ subject ] = (((total - (total - subjectAvg1[ subject ])) / total) * 100).toString()
+                subjectAvg2[ subject ] = (((total - (total - subjectAvg2[ subject ])) / total) * 100).toString()
+                subjectAvg3[ subject ] = (((total - (total - subjectAvg3[ subject ])) / total) * 100).toString()
+            } )
+            passPercent1 = (((total - (total - passPercent1)) / total) * 100).toString()
+            passPercent2 = (((total - (total - passPercent2)) / total) * 100).toString()
+            passPercent3 = (((total - (total - passPercent3)) / total) * 100).toString()
+            passPercent4 = (((total - (total - passPercent4)) / total) * 100).toString()
+            marksDTO.marksData = {
+                batch: Batch,
+                department: Department,
+                section: Section,
+                semester: Semester,
+                passPercent: passPercent,
+                subjects: subjects,
+                passPercent1: passPercent1,
+                passPercent2: passPercent2,
+                passPercent3: passPercent3,
+                passPercent4: passPercent4,
+                result: marks,
+                arrear1: marks1,
+                arrear2: marks2,
+                arrear3: marks3,
+                subjectPassPercent: subjectAvg,
+                subjectPassPercent1: subjectAvg1,
+                subjectPassPercent2: subjectAvg2,
+                subjectPassPercent3: subjectAvg3
+            }
+        } catch ( err ) {
+            // console.log( err )
+            marksDTO.success = false
+            marksDTO.description = err
+            marksDTO.status = 500
+            marksDTO.marksData = null
+            logger.info( 'Exiting | MarksDao::getClassMarks | Error' )
+            return marksDTO
+        }
+
+        marksDTO.success = true
+        marksDTO.status = 200
+        marksDTO.description = DATA_RETRIEVED_SUCCESSFULLY
+        logger.info( "Exiting | MarksDao::getClassMarks" )
+        return marksDTO
+    }
+
     async findStudent ( regNum ) {
         logger.info( 'Entering | MarksDao::findStudent' )
         try {
             const [ rows ] = await this.conn.execute( 'SELECT Class, Batch FROM students WHERE Registration_Number=' + regNum )
-            let data = rows[ 0 ]
-            data.Class = data.Class.split( '_' )[ 0 ]
-            logger.info( 'Exiting | MarksDao::findStudent' )
-            return data
+            if ( rows.length > 0 ) {
+                let data = rows[ 0 ]
+                data.Class = data.Class.split( '_' )[ 0 ]
+                logger.info( 'Exiting | MarksDao::findStudent' )
+                return data
+            } else {
+                throw DATA_NOT_FOUND
+            }
         } catch ( err ) {
             logger.info( 'Exiting | MarksDao::findStudent | Error' )
             throw err
@@ -302,6 +513,11 @@ class MarksDao  {
             throw err
         }
     }
+
+    format ( num ) {
+        return parseInt( num * 1000 ) / 1000
+    }
+
 }
 
 module.exports = MarksDao
